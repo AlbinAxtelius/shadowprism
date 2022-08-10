@@ -1,9 +1,9 @@
 # Keep environment variables out of version control
 *.env
 
-dist
-coverage
+dist/
+coverage/
 
-node_modules
+node_modules/
 
 yarn-error.log
