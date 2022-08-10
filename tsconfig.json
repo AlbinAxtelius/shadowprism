@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "module": "ES2020",
+    "moduleResolution": "Node",
+    "baseUrl": ".",
+    "paths": {
+      "@app/prisma/*": ["prisma/*"],
+      "@app/controllers/*": ["src/controllers/*"],
+      "@app/models/*": ["src/models/*"],
+      "@app/utils/*": ["src/utils/*"],
+      "@app/middleware/*": ["src/middleware/*"],
+      "@app/services/*": ["src/services/*"],
+      "@app/types/*": ["src/types/*"],
+      "@app/routes/*": ["src/routes/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
