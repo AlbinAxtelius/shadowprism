@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["shadowprism"]
+  "cSpell.words": ["shadowprism"],
+  "testing.automaticallyOpenPeekView": "never"
 }
