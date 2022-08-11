@@ -14,6 +14,4 @@ app.get("/", (req, res) => {
 
 app.use("/messages", messagesRouter)
 
-app.listen(4000, () => {
-  console.log(`Server is listening on port ${4000}`)
-})
+export default app
