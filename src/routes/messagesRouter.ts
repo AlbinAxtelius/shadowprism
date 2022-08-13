@@ -7,36 +7,36 @@ import z from "zod"
 export const messagesRouter = Router()
 
 messagesRouter.get("/", async (req, res) => {
-  const messages = await prisma.message.findMany()
+	const messages = await prisma.message.findMany()
 
-  res.send(messages)
+	res.send(messages)
 })
 
 const postMessageBodySchema = z.object({
-  text: z.string(),
+	text: z.string(),
 })
 
 type MessageCreateInput = z.infer<typeof postMessageBodySchema>
 
 messagesRouter.post(
-  "/",
-  validateInput(
-    z.object({
-      body: postMessageBodySchema,
-    })
-  ),
-  async (
-    req: Request<never, Message, MessageCreateInput>,
-    res: Response<Message>
-  ) => {
-    const { body } = req
+	"/",
+	validateInput(
+		z.object({
+			body: postMessageBodySchema,
+		})
+	),
+	async (
+		req: Request<never, Message, MessageCreateInput>,
+		res: Response<Message>
+	) => {
+		const { body } = req
 
-    const message = await prisma.message.create({
-      data: {
-        content: body.text,
-      },
-    })
+		const message = await prisma.message.create({
+			data: {
+				content: body.text,
+			},
+		})
 
-    res.send(message)
-  }
+		res.send(message)
+	}
 )
